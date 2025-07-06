@@ -1,18 +1,22 @@
-from parser import get_input
+from parser import *
 from Graph import Graph
 from Visualizer import draw_graph
 
 print(r"""
 +----------------------------------------+
-|         WELCOME TO THE TOOL            |
+|          WELCOME TO THE TOOL           |
 |        -- Graph Visualizer --          |
 +----------------------------------------+
 
       🔍 Visualize. Explore. Learn. 🔍
 """)
 
+op = input("Do you want to input using a text file? (Y/n): ").strip().lower()
+if op == 'n':
+    edgeList, nodes, directed = get_input_user()
+else:
+    edgeList, nodes, directed = get_input_file()
 
-edgeList, nodes, directed = get_input()
 g = Graph(edgeList, nodes, directed)
 
 while True:
@@ -38,6 +42,13 @@ while True:
 
     elif op == '3':
         v = int(input("Enter the source vertex: "))
+
+        if v >= nodes:
+            print(f"\nVertex can't be greater than {nodes - 1}\nTry again...")
+        else:
+            # g.set_DFS(v)
+            # draw_graph(nodes, g.DFS_edge_lst)
+            ...
 
     elif op == '4':
         break
