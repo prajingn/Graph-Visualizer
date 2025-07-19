@@ -21,7 +21,7 @@ def get_input_file():
     print("First line must contain number of nodes.")
     print('Second line must contain "True" or "False" to indicate whether the graph is directed or not.')
     print("Third line must contain a list of tupples (e.g. [(1,2),(2,3)]) reprasenting edges of the graph.\n")
-    fl_name = input("Enter file name: ")
+    fl_name = input("Enter file path: ")
     try:
         with open(fl_name, "r") as f:
             nodes = int(f.readline())
