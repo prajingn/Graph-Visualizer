@@ -32,6 +32,7 @@ class Graph:
         parent = {i : None for i in range(self.size)}
 
         q.add(v)
+        visited[v] = True
         while not q.isEmpty():
             k = q.remove()
             for i in self.adjlst[k]:
@@ -51,9 +52,9 @@ class Graph:
         s.add(v)
         while not s.isEmpty():
             k = s.remove()
+            visited[k] = True
             for i in self.adjlst[k]:
                 if not visited[i]:
-                    visited[i] = True
                     parent[i] = k
                     s.add(i)
         

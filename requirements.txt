@@ -1,4 +1,4 @@
-# pip 
+# conda
 pygraphviz
 pillow
 
