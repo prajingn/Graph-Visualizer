@@ -1,4 +1,4 @@
-from parser import *
+from parser import get_input_user, get_input_file
 from Graph import Graph
 from Visualizer import draw_graph
 
@@ -46,9 +46,8 @@ while True:
         if v >= nodes:
             print(f"\nVertex can't be greater than {nodes - 1}\nTry again...")
         else:
-            # g.set_DFS(v)
-            # draw_graph(nodes, g.DFS_edge_lst)
-            ...
+            g.set_DFS(v)
+            draw_graph(nodes, g.DFS_edge_lst)
 
     elif op == '4':
         break

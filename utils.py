@@ -10,3 +10,16 @@ class Queue:
     
     def isEmpty(self):
         return self.lst == []
+    
+class Stack:
+    def __init__(self):
+        self.lst = []
+    
+    def add(self, v):
+        self.lst.append(v)
+    
+    def remove(self):
+        return self.lst.pop()
+    
+    def isEmpty(self):
+        return self.lst == []

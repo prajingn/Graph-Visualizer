@@ -8,9 +8,9 @@ def get_input_user():
     edgeList = ast.literal_eval(input("Enter edges as a list of tupples (e.g. [(1,2),(2,3)]): "))
 
     for i, j in edgeList:
-        if i > nodes or j > nodes:
+        if i >= nodes or j >= nodes:
             print("Node out of range!")
-            print(f"Value of node must be >= 0 and < {nodes}")
+            print(f"Value of node must be >= 0 and <= {nodes - 1}")
             print("Exiting...")
             sys.exit(1)
 
