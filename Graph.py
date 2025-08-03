@@ -52,6 +52,8 @@ class Graph:
         s.add(v)
         while not s.isEmpty():
             k = s.remove()
+            if visited[k]:
+                continue
             visited[k] = True
             for i in self.adjlst[k]:
                 if not visited[i]:

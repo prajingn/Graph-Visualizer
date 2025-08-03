@@ -25,7 +25,7 @@ def get_input_file():
     try:
         with open(fl_name, "r") as f:
             nodes = int(f.readline())
-            directed = bool(f.readline())
+            directed = False if f.readline().strip().lower() == "false" else True
             edgeList = ast.literal_eval(f.readline())
 
     except FileNotFoundError:
